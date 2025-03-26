@@ -1,3 +1,14 @@
+.visual-refresh section.panels_c48ade {
+  margin-left: 72px;
+  width: calc(100% - var(--space-xs)*2 - 72px) !important;
+  .actionButtons_e131a9 button {
+    padding: 0;
+  }
+}
+nav.guilds_c48ade {
+  margin-bottom: 0 !important;
+}
+
 .nameTag__37e49 {
   display: none;
 }
