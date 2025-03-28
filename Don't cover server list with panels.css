@@ -1,14 +1,6 @@
-.visual-refresh section.panels_c48ade {
-  margin-left: var(--custom-guild-list-width);
-  width: calc(100% - var(--space-xs)*2 - var(--custom-guild-list-width)) !important;
-  .actionButtons_e131a9 button {
-    padding: 0;
-  }
-}
-nav.guilds_c48ade {
-  margin-bottom: 0 !important;
-}
-/* optionally hide the bar at bottom of server list */
-.sidebar_c48ade:after {
-  display: none;
+.visual-refresh [class^="panels_"] {
+    border-radius: 0;
+    left: var(--custom-guild-list-width);
+    bottom: 0;
+    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 1px);
 }
