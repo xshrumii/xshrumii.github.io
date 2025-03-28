@@ -1,6 +1,29 @@
-.visual-refresh [class^="panels_"] {
-    border-radius: 0;
-    left: var(--custom-guild-list-width);
-    bottom: 0;
-    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 1px);
+.nameTag__37e49 {
+ 
+
+  display: none;
+ 
+}
+ 
+[class*="panels"] [class*="avatarWrapper"] {
+ 
+
+  min-width: unset;
+ 
+}
+ 
+.container__37e49 {
+ 
+
+  gap: var(--space-4) !important;
+ 
+}
+ 
+[class*="avatarWrapper__"] {
+ 
+
+  scale: 0.8;
+ 
+
+  border-radius: 100% !important;
 }
