@@ -1,4 +1,0 @@
-div[class^=callContainer] div[class^=pictureInPictureWindow] {
-  scale: 2;
-  translate: 50% -75%;
-}
