@@ -1,0 +1,32 @@
+.nameTag__37e49 {
+  display: none;
+}
+
+[class*="panels"] [class*="avatarWrapper"] {
+  min-width: unset;
+}
+
+.container__37e49 {
+  gap: var(--space-4) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+[class*="avatarWrapper__"] {
+  border-radius: 100% !important;
+  width: min-content;
+ 
+ &:hover {
+    background-color: transparent !important;
+ }
+ 
+ & > .avatar__37e49 {
+    width: 30px !important;
+    height: 40px;
+    margin-top: -1px;
+
+    & > svg {
+      width: 39px !important;
+    }  
+  }
+}
