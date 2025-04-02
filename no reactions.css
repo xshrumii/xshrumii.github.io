@@ -1,0 +1,4 @@
+/* CSS to hide reactions in Discord */
+div[aria-label="Reactions"] {
+    display: none !important;
+}
