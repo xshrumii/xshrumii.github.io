@@ -1,0 +1,16 @@
+[class^=channelTextArea] {
+  display: none;
+}
+
+[class^=typing] {
+  background-color: var(--background-primary);
+  margin: -1px;
+}
+
+[class^=section]:has([aria-label^="Message @"]) {
+  display: none;
+}
+
+#user-context-invite-to-server {
+  display: none;
+}
