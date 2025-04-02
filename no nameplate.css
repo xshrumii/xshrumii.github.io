@@ -1,2 +1,0 @@
-/* Hide nameplates */
-[class*="nameplated_"] > :has([src*="nameplates"]) { display: none; }
