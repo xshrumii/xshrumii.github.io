@@ -1,5 +1,0 @@
-[class*="panels"] {
-    width: calc(97% - var(--custom-guild-list-width)) !important;
-    left: unset !important;
-    right: 5px;
-}
