@@ -1,0 +1,14 @@
+@import url("https://raw.githubusercontent.com/Augenbl1ck/Discord-Styles/refs/heads/main/compactUserinfo.css");
+
+:root {
+  /* Always visible roles -> Max 8; Min 1 */
+  --row: 1;
+  /* Maximum of lines in About Me -> Max 11; Min 1 */
+  --max-lines: 11;
+  /* "View Full Bio" Button -> Default: none */
+  --show-profile-text: none;
+  /* Delay the hover animation. Default: 0.25s */
+  --delay-t: 0.25s;
+  /* Animation speed. Default: 0.45s */
+  --anim-time: 0.45s;
+}
