@@ -1,0 +1,90 @@
+/* Panel Positioning */
+.panels_c48ade {
+  position: fixed !important; /* Keep it fixed on screen */
+  left: 0 !important; /* Flush against the left edge */
+  bottom: 0 !important; /* Position it at the very bottom-left */
+  height: 57px !important; /* Height of the panel */
+  width: 56px !important; /* Width of the panel */
+  border-radius: 30px !important; /* Round corners */
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden !important; /* Prevent overflow */
+  transition-duration: 0.35s;
+  z-index: 50000;
+  pointer-events: all;
+  border: 1px solid var(--border-subtle) !important;
+  margin: 0 !important; /* Remove any margin */
+  padding: 0 !important; /* Remove any padding */
+  box-sizing: border-box; /* Make sure padding and borders don't affect the size */
+}
+
+/* Profile Image Adjustments */
+.panels_c48ade img {
+  width: 100% !important; /* Make sure the image fills the container */
+  height: 100% !important; /* Ensure it fits the height */
+  object-fit: cover !important; /* Ensure the image covers the area without stretching */
+  border: none !important; /* Remove border */
+  padding: 0 !important; /* Remove any padding */
+  margin: 0 !important; /* Remove margin */
+  border-radius: 50% !important; /* Make the image circular (if that's the design) */
+  display: block !important; /* Ensure no inline spacing issues */
+}
+
+/* Hover Effect */
+.panels_c48ade:hover {
+  width: 300px !important; /* Expand width on hover */
+  height: auto !important; /* Allow height to expand on hover */
+  display: flex !important;
+  flex-direction: column;
+  border-radius: 15px !important; /* Round corners on hover */
+  filter: drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.123)); /* Add shadow on hover */
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.panels_c48ade:hover .wrapper_e131a9 {
+  height: auto !important; /* Allow wrapper height to expand on hover */
+}
+
+.wrapper_e131a9 {
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Miscellaneous Styles (for other content inside the panel) */
+.sidebar_c48ade {
+  overflow: visible !important;
+}
+
+.container__2637a {
+  padding-bottom: 0px !important;
+}
+
+.scroller__99e7c {
+  margin-bottom: 0px !important;
+}
+
+.bottom__7aaec {
+  bottom: 0px !important;
+}
+
+/* Hidden buttons transition */
+.visual-refresh [class^="panels_"] [class^="container__"] [class^="buttons__"] {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: left;
+  transition: opacity 0.1s ease-in, transform 0.1s ease-in;
+  will-change: opacity, transform;
+}
+
+.visual-refresh [class^="panels_"]:hover [class^="container__"] [class^="buttons__"] {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.visual-refresh .panel__5dec7 {
+  display: none;
+}
+
+.visual-refresh [class^="panels_"]:hover .panel__5dec7 {
+  display: block;
+}
