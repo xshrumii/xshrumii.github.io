@@ -1,0 +1,349 @@
+@container style(--\\--compact-title-bar: true) {
+	body {
+		--custom-app-top-bar-height: 28px;
+	}
+
+	div[data-windows="true"][class*="bar_"] {
+		--space-32: var(--custom-app-top-bar-height);
+	}
+}
+
+@container style(--\\--compact-input-box: true) {
+	:is(form, form > div) {
+		& > div[class*="channelBottomBarArea"] {
+			--custom-channel-textarea-text-area-height: 44px;
+			div[class*="attachWrapper_"] {
+				padding: 6px;
+			}
+			div[class*="attachButton_"] > div[class*="icon__"] {
+				padding: 10px !important;
+			}
+		}
+
+		& > [class*="wrapper__"] {
+			padding: 10px !important;
+			& > div {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		div[class*="textArea_"] + div[class*="buttons_"] {
+			gap: 0;
+		}
+	}
+
+	div[class*="jumpToPresentBar_"], div[class*="jumpToPresentBar_"]:active {
+		margin-bottom: 1px;
+		min-height: 0;
+		button {
+			min-height: 0;
+			height: unset;
+		}
+	}
+
+	/* ===== ADDED: Make chat input box transparent and fixed at bottom ===== */
+	:is(form, form > div) {
+		position: fixed !important;
+		bottom: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		z-index: 10000 !important;
+		background-color: transparent !important;
+		padding: 0 10px !important;
+		margin: 0 !important;
+		box-sizing: border-box !important;
+	}
+
+	:is(form, form > div) > div[class*="channelBottomBarArea"] {
+		background-color: transparent !important;
+		border-top: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	:is(form, form > div) div[class*="textArea_"] {
+		background-color: transparent !important;
+		border: none !important;
+		box-shadow: none !important;
+		color: inherit !important;
+	}
+
+	:is(form, form > div) > [class*="wrapper__"] {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+}
+
+@container style(--\\--compact-context-menu: true) {
+	div[class*="clickTrapContainer"] div[role="menu"] {
+		div[role="group"] {
+			padding: 0;
+		}
+
+		div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
+			padding: 4px;
+
+			&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
+				color: var(--interactive-normal);
+			}
+		}
+	}
+}
+
+@container style(--\\--compact-user-area: true) {
+	section[aria-label="User area"], div[class*="sidebar_"] > section[aria-label] {
+		left: 0 !important;
+		bottom: 0 !important;
+		border-radius: 0 !important;
+		border: none !important;
+		width: 100% !important;
+		background-color: color-mix(in oklab, var(--background-tertiary, var(--background-base-lowest)), #000 11%) !important;
+
+		& > [class*="wrapper_"] > [class*="container_"] {
+			--space-xs: 6px;
+		}
+	}
+
+	nav[class*="privateChannels__"] > div[class*="scroller__"], nav[aria-label="Servers sidebar"], nav[class*="guilds_"] {
+		margin-bottom: calc(var(--custom-app-panels-height, 0)) !important;
+	}
+
+	[class*="sidebarList_"] #channels {
+		margin-bottom: 0;
+	}
+
+	[class*="activityPanel_"] {
+		background-color: transparent;
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+
+	[class*="rtcConnectionStatusWrapper__"] {
+		[class*="labelWrapper__"] [class*="rtcConnectionStatusLabel__"] > div > div {
+			font-size: 100%;
+		}
+
+		[class*="rtcConnectionStatus__"] + a > div > div {
+			font-size: 100%;
+		}
+	}
+}
+
+@container style(--\\--compact-channel-categories: true) {
+	ul[aria-label="Channels"] {
+		li[class*="containerDefault_"]:not([class*="containerDefault__"]) a[class*="link__"] {
+			--radius-sm: 5px;
+		}
+
+		li[class*="containerDefault__"] h3:is([class*="name__"], [class*="header__"]) > div {
+			font-size: 95%;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+}
+
+@container style(--\\--compact-server-list: true) {
+	nav[aria-label="Servers sidebar"] {
+		--custom-guild-list-width: 56px;
+		--custom-guild-list-padding: 8px;
+	}
+}
+
+/* --------------------------------------- */
+
+@container style(--\\--hide-nameplates: true) {
+	div[class*="childContainer__"][class*="nameplated__"] {
+		padding-right: inherit;
+		& > div[class*="container__"][style] {
+			display: none;
+		}
+	}
+
+	li[class*="channel__"] > div[class*="interactive__"] > div[class*="container__"]:is([class*="fadeIn__"], :has(> div[class*="videoContainer__"])) {
+		display: none;
+	}
+
+	[class*="closeButtonPlated__"] {
+		opacity: 0.7;
+		[class*="innerCloseButtonPlated"] {
+			background-color: transparent;
+		}
+	}
+}
+
+@container style(--\\--hide-guild-tags: true) {
+	[role="button"]:is([class*="clanTag__"], [class*="clanTagChiplet_"]),
+	[class*="container__"] > [class*="tags__"] > span:has(> [class*="chipletContainerInline_"]),
+	span:has(> span[class*="clanTagChiplet_"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-profile-effects: true) {
+	[class*="profileEffects__"] { display: none; }
+}
+
+@container style(--\\--hide-avatar-decorations: true) {
+	[class*="avatarDecoration_"] { display: none; }
+}
+
+@container style(--\\--hide-gradient-glow-usernames: true) {
+	[class*="ColorGradient_"] {
+		background: none;
+		color: color-mix(in oklab, var(--custom-gradient-color-1), var(--custom-gradient-color-2));
+		-webkit-text-fill-color: initial;
+	}
+}
+
+@container style(--\\--hide-server-boost-goal: true) {
+	div:has(> div[class*="textArea"] > div[class*="goalTextContainer"]),
+	div#channels > ul > div[class*="containerWithMargin_"] {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-server-activity: true) {
+	h3[class*="membersGroup"]:has(svg path[d^="M10.56 1.1c"]) {
+		display: none;
+	}
+
+	:is(div[aria-label="Members"], div[class*="members_"] > div[role="list"][aria-label]) > div:not([class], [role], [aria-label], [aria-role]):has(> div > div[class*="openOnHover"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-user-activity: true) {
+	div[class*="activityPanel_"] { display: none; }
+}
+
+@container style(--\\--hide-context-menu-quick-reactions: true) {
+	div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-hover-quick-reactions: true) {
+	:is(div[aria-label="Message Actions"], div[class*="message__"] > div[class*="buttonContainer_"] > div[class*="buttons__"]) > div {
+		& > :is([aria-label^="Click to react with"], div[class*="hoverBarButton_"]:has(> div[class*="icon_"])) { display: none; }
+		& > [class*="separator"] { display: none; }
+	}
+}
+
+@container style(--\\--hide-image-edit-button: true) {
+	[aria-label="Edit Image with Apps"],
+	div[class*="imageContainer_"] > div[class*="hoverButtonGroup_"] > div[class*="hoverButton_"]:has(> div > svg path[d^=" M-6.554999828338623,1"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-gif-button: true) {
+	[role=button][aria-label="Open GIF picker"],
+	div.expression-picker-chat-input-button > [role=button]:has(svg path[d^=" M-7,-10 C-8.65"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-sticker-button: true) {
+	[role=button][aria-label="Open sticker picker"],
+	div.expression-picker-chat-input-button > [role=button]:has(svg path[d^=" M-6,-10 C-6,-10 6,-10 6,-10 C8.20"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-emoji-button: true) {
+	[role=button][aria-label="Select emoji"],
+	[role=button][class*="emojiButtonNormal_"] {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-apps-button: true) {
+	[class*="channelAppLauncher"] { display: none !important; }
+}
+
+@container style(--\\--hide-gift-button: true) {
+	[role=button][aria-label="Send a gift"],
+	div[class*="textArea_"] + div[class*="buttons_"] > div:has(> div svg path[d^=" M-7,10 C-8.1049995"]) {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-help-button: true) {
+	div[data-fullscreen] div[class*="trailing_"] a[href="https://support.discord.com"] {
+		display: none;
+	}
+}
+
+@container style(--\\--hide-shop-button: true) {
+	li[role="listitem"]:has(> div > a[href*="/shop"]) { display: none; }
+}
+
+@container style(--\\--hide-nitro-button: true) {
+	li[role="listitem"]:has(> div > a[href*="/store"]) { display: none; }
+}
+
+@container style(--\\--hide-active-now: true) {
+	div[class*="nowPlayingColumn_"] { display: none; }
+}
+
+@container style(--\\--hide-nitro-upsells: true) {
+	[class*="upsellContainer__"] { display: none; }
+}
+
+@container style(--\\--hide-vencord-desktop-platform-indicator: true) {
+	.vc-platform-indicator svg[aria-label="Desktop"] { display: none; }
+}
+
+@container style(--\\--hide-cluttery-badges: true) {
+	/* TODO: make selectors language independent */
+	[aria-label="User Badges"] {
+		[aria-label="Active Developer"],
+		[aria-label="Completed a Quest"],
+		[aria-label^="Originally known as"],
+		[aria-label^="HypeSquad"] {
+			display: none;
+		}
+	}
+}
+
+/* --------------------------------------- */
+
+@container style(--\\--darker-scrollbar: true) {
+	body, [class*="scroller__"] {
+		--scrollbar-auto-track: #00001116;
+		--scrollbar-auto-thumb: #0005;
+	}
+}
+
+@container style(--\\--darker-hovered-message: true) {
+	body {
+		--background-message-hover: #00001116;
+	}
+}
+
+@container style(--\\--prevent-sidebar-resizing: true) {
+	[class*="sidebarResizeHandle_"] { display: none !important; }
+}
+
+@container style(--\\--fix-minor-icon-misalignments: true) {
+	svg[class*="ownerIcon__"] {
+		top: -1px;
+	}
+
+	svg[class*="flowerStar__"] path[d^="m16 7.6c0"] {
+		transform: translateY(-0.5px);
+	}
+
+	[class*="guildDropdown_"] svg path[d^="M5.3 9.3a1"] {
+		transform: translateY(2px);
+	}
+}
+
+
+
+
+
+
